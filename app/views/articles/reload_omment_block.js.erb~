@@ -1,0 +1,1 @@
+<div class="sample_data"><%= sanitize(render :partial => "comment") %></div>

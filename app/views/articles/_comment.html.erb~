@@ -1,0 +1,13 @@
+<h2>Comments</h2>
+
+<%if params[:article_id].present?%>
+  
+  <%@article = Article.find_by_id(params[:article_id].to_i)%>
+  <%Rails.logger.info "====#{@article.comments.inspect}"%>
+<%end%>
+<% @article.comments.each do |comment| %>
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.body %>
+  </p>
+<% end %>
